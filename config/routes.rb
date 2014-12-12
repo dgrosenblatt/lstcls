@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'articles#index'
+  root 'articles#random'
 
-  resources :articles, only: :index
+  get 'articles/random' => 'articles#random'
+
+  resources :articles, only: [:index, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

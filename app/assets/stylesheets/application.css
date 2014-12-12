@@ -24,11 +24,31 @@ header {
     background-color: #444;
     border-bottom: 1px solid #FFF;
     height: 100px;
-    color: #EEE;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:1;
 }
 
 header h1 {
   margin: 0;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: #EEE;
+}
+
+.header-hover {
+  background-color: #EEE;
+}
+
+.header-hover-link {
+  color: #E31836;
+}
+
+.body-container {
+  margin: 100px 0 0 0;
 }
 
 footer {

@@ -1,0 +1,6 @@
+<h2 class="title">Create a New Article</h1>
+<%= form_for @article do |f| %>
+  <%= f.label :title, 'Title' %>
+  <%= f.text_field :title  %>
+  <%= f.submit %>
+<% end %> 

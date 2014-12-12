@@ -15,12 +15,22 @@
 //= require turbolinks
 //= require_tree .
 
+var ready = function () {
+  articles.init()
+};
+
 var articles = {
   init: function() {
-    $(".title-0").css("opacity", 0.85)
-    $(".title-0").fadeIn(1000);
+    $(".title-0").css("opacity", 0.85);
+    $(".title-0").slideDown(400);
     $(".container").mouseenter(this.reveal);
+    $("header").mouseenter(this.headChange);
+    $("header").mouseleave(this.headChange);
+  },
 
+  headChange: function () {
+    $(this).toggleClass("header-hover");
+    $(this).find("a").toggleClass("header-hover-link");
   },
 
   reveal: function() {
@@ -34,13 +44,5 @@ var articles = {
   }
 };
 
-var footer = {
-  init: function() {
-
-  }
-};
-
-$(document).ready(function() {
-  articles.init();
-  footer.init();
-});
+$(document).ready(ready);
+$(document).on('page:load', ready);

@@ -1,0 +1,7 @@
+  <% @articles.each_with_index do |article, index| %>
+  <div class="container">
+    <div class="article hide title-<%= index %>">
+      <h2><a href="#"><%= article %></a></h2>
+    </div>
+  </div>
+  <% end  %>

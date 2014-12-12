@@ -7,12 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header><h1>List-0-Matic</h1></header>
+  <header><h1><%= link_to "List-0-Matic", root_url %></h1></header>
 
-  <%= yield %>
+  <div class="body-container">
+    <%= yield %>
+  </div>
   <footer>
     <p>This is a footer</p>
-    <p>It ensures that the articles aren't all the way at the bottom of the screen.</p>
   </footer>
 
 </body>
