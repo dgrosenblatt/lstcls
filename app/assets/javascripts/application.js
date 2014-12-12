@@ -17,15 +17,30 @@
 
 var articles = {
   init: function() {
-    $(".title-0").slideDown(1000);
+    $(".title-0").css("opacity", 0.85)
+    $(".title-0").fadeIn(1000);
     $(".container").mouseenter(this.reveal);
 
   },
+
   reveal: function() {
+    $(this).children(".article").animate({
+      opacity: 1
+    }, 300, function() {
+      $(this).animate({opacity: 0.85}, 200);
+    });
+
     $(this).next(".container").children(".article").slideDown(1000);
-  },
+  }
+};
+
+var footer = {
+  init: function() {
+
+  }
 };
 
 $(document).ready(function() {
   articles.init();
+  footer.init();
 });
