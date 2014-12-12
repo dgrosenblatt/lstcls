@@ -1,7 +1,7 @@
-<h1>Here are all the articles</h1>
-
-<ol>
-  <% @articles.each do |article| %>
-    <li><a href="#"><%= article %></a></li>
+  <% @articles.each_with_index do |article, index| %>
+  <div class="container">
+    <div class="article hide title-<%= index %>">
+      <h2><a href="#"><%= article %></a></h2>
+    </div>
+  </div>
   <% end  %>
-</ol>
